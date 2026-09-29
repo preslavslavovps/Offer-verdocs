@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evrotrust Partner Program - Offer for Verdocs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241d18;
+  --ink-soft:#6a5f57;
+  --sun:#fdb813;
+  --flame:#f5821f;
+  --ember:#ee4023;
+  --teal:#16a085;
+  --cloud:#fff8f0;
+  --paper:#ffffff;
+  --night:#181310;
+  --line:#f0e2d2;
+  --grad:linear-gradient(120deg,#fdb813 0%,#f5821f 48%,#ee4023 100%);
+  --grad-soft:linear-gradient(120deg,#fff3df 0%,#ffe9d6 100%);
+  --shadow:0 30px 70px -40px rgba(120,45,15,.55);
+  --maxw:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{overflow-x:hidden;max-width:100%}
+body{
+  margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);
+  background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Sora',system-ui,sans-serif;font-weight:700;line-height:1.1;margin:0;color:var(--ink)}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+section,header{scroll-margin-top:60px}
+
+/* ---------- progress + brand bar ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:60;transition:width .12s linear}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--maxw);margin:0 auto;padding:calc(14px + env(safe-area-inset-top,0px)) 24px 14px;display:flex;align-items:center;justify-content:center}
+.brand-tag{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+
+/* ---------- side dot nav ---------- */
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:14px}
+.dots button{width:11px;height:11px;padding:0;border-radius:50%;border:1.5px solid rgba(150,110,80,.5);
+  background:transparent;cursor:pointer;transition:.25s;position:relative}
+.dots button:hover{border-color:var(--flame)}
+.dots button.on{background:var(--grad);border-color:transparent;transform:scale(1.25)}
+.dots button span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink);
+  background:#fff;border:1px solid var(--line);padding:4px 10px;border-radius:100px;opacity:0;pointer-events:none;transition:.2s;box-shadow:var(--shadow)}
+.dots button:hover span{opacity:1}
+
+/* ---------- frame signature ---------- */
+.frame{position:relative;display:inline-block;padding:6px 22px}
+.frame::before,.frame::after{content:'';position:absolute;width:26px;height:26px;opacity:0;transition:opacity .6s ease .2s}
+.frame::before{top:0;left:0;border-top:2px solid currentColor;border-left:2px solid currentColor}
+.frame::after{bottom:0;right:0;border-bottom:2px solid currentColor;border-right:2px solid currentColor}
+.reveal.in .frame::before,.reveal.in .frame::after,.frame.show::before,.frame.show::after{opacity:1}
+
+/* ---------- layout ---------- */
+section{padding:104px 24px;position:relative}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--flame);font-weight:600;margin-bottom:18px}
+.lead{font-size:19px;color:var(--ink-soft);max-width:660px}
+.tint{background:var(--cloud)}
+.sec-title{font-size:clamp(28px,4vw,44px)}
+
+/* animated section separators (scroll-linked) */
+.sep{position:relative;height:3px;width:min(var(--maxw),calc(100% - 48px));margin:10px auto;
+  background:rgba(120,80,40,.12);border-radius:100px}
+.sep i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--grad);border-radius:100px;
+  box-shadow:0 0 14px rgba(245,130,31,.55);transition:width .12s linear}
+.sep i::after{display:none}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- hero ---------- */
+.hero{background:var(--grad);color:#fff;min-height:92vh;display:flex;align-items:center;
+  padding:154px 24px 96px;overflow:hidden;position:relative}
+.hero::after{content:'';position:absolute;inset:0;background:
+  radial-gradient(1200px 520px at 82% -12%,rgba(255,255,255,.28),transparent 60%),
+  radial-gradient(900px 500px at -5% 110%,rgba(238,64,35,.35),transparent 60%);pointer-events:none;z-index:1}
+.hero .wrap{position:relative;z-index:3}
+.hero h1{color:#fff;font-size:clamp(38px,6vw,74px);font-weight:800;letter-spacing:-1.5px;max-width:16ch;
+  text-shadow:0 2px 30px rgba(120,40,10,.25)}
+.hero .frame{color:#fff;margin-bottom:26px}
+.hero .frame span{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:4px;text-transform:uppercase}
+.hero p{color:rgba(255,255,255,.95);font-size:20px;max-width:580px;margin:26px 0 0}
+
+/* hero animated Europe map */
+.hero-viz{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.hero-viz .mapdots circle{fill:rgba(255,255,255,.5)}
+.hero-viz .arc{fill:none;stroke:rgba(255,255,255,.9);stroke-width:1.6;stroke-linecap:round;
+  stroke-dasharray:600;stroke-dashoffset:600;animation:arcflow 3.6s cubic-bezier(.45,0,.25,1) infinite}
+@keyframes arcflow{0%{stroke-dashoffset:600;opacity:.15}30%{opacity:1}55%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-600;opacity:.15}}
+.hero-viz .ring{fill:none;stroke:#fff;stroke-width:1.5;transform-box:fill-box;transform-origin:center;
+  animation:ringpulse 2.9s ease-out infinite}
+@keyframes ringpulse{0%{transform:scale(1);opacity:.7}70%{opacity:0}100%{transform:scale(3.6);opacity:0}}
+.hero-viz .hub{fill:#fff;transform-box:fill-box;transform-origin:center;
+  filter:drop-shadow(0 0 5px rgba(255,255,255,.85));animation:hubpulse 2.9s ease-in-out infinite}
+.hero-viz .hub.sofia{fill:var(--sun);filter:drop-shadow(0 0 9px rgba(253,184,19,.95))}
+@keyframes hubpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
+
+.hero-stats{display:flex;gap:14px;margin-top:52px;flex-wrap:wrap}
+.hero-stats div{color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);
+  border-radius:16px;padding:16px 22px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);min-width:120px}
+.hero-stats b{font-family:'Sora',sans-serif;font-size:32px;font-weight:800;display:block;line-height:1}
+.hero-stats small{font-size:13px;opacity:.9;letter-spacing:.5px}
+.scroll-cue{margin-top:56px;display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.92);
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.scroll-cue .dot{width:26px;height:42px;border:2px solid rgba(255,255,255,.7);border-radius:14px;position:relative}
+.scroll-cue .dot::after{content:'';position:absolute;left:50%;top:8px;width:4px;height:8px;background:#fff;border-radius:2px;transform:translateX(-50%);animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,12px)}}
+
+/* ---------- model cards ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.model{border:1px solid var(--line);border-radius:20px;padding:34px;background:var(--paper);
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;position:relative;overflow:hidden;
+  box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.model:hover{transform:translateY(-6px);box-shadow:0 26px 60px -30px rgba(238,64,35,.45)}
+.model .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.model.ref .tag{color:var(--flame)}
+.model.res .tag{color:var(--teal)}
+.model h3{font-size:26px;margin:10px 0 6px}
+.model .who{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
+.model ul{list-style:none;padding:0;margin:0}
+.model li{position:relative;padding:9px 0 9px 30px;font-size:15px;border-top:1px solid var(--line)}
+.model li:first-child{border-top:0}
+.model li::before{content:'';position:absolute;left:4px;top:16px;width:9px;height:9px;border-radius:50%}
+.model.ref li::before{background:var(--flame)}
+.model.res li::before{background:var(--teal)}
+.bar{height:5px;width:100%;position:absolute;top:0;left:0}
+.model.ref .bar{background:var(--grad)}
+.model.res .bar{background:linear-gradient(120deg,#16a085,#1abc9c)}
+
+/* ---------- tiers ---------- */
+.tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:44px}
+.tier{border-radius:18px;padding:30px;color:#fff;position:relative;overflow:hidden;min-height:230px;display:flex;flex-direction:column;
+  box-shadow:var(--shadow)}
+.tier.t1{background:linear-gradient(150deg,#fdb813,#f7a41c)}
+.tier.t2{background:linear-gradient(150deg,#f5821f,#ee4023)}
+.tier.t3{background:linear-gradient(150deg,#2b2b2b,#4a4a4a)}
+.tier .lvl{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;opacity:.85}
+.tier h4{color:#fff;font-size:21px;margin:6px 0 14px}
+.tier .pct{font-family:'Sora',sans-serif;font-weight:800;font-size:52px;line-height:1;margin-top:auto}
+.tier .pct small{font-size:16px;font-weight:600;opacity:.9}
+.tier p{font-size:13.5px;margin:8px 0 0;opacity:.95}
+.tier .split{display:flex;gap:24px;margin-top:auto}
+.tier .split div span{display:block;font-family:'Sora',sans-serif;font-weight:800;font-size:34px;line-height:1}
+.tier .split div small{font-size:12px;opacity:.85}
+.note{font-size:13px;color:var(--ink-soft);margin-top:20px}
+
+/* ---------- reseller model ---------- */
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:44px;align-items:start}
+.res-benefits ul{list-style:none;padding:0;margin:0}
+.res-benefits li{position:relative;padding:15px 0 15px 38px;font-size:16px;border-top:1px solid var(--line)}
+.res-benefits li:first-child{border-top:0}
+.res-benefits li::before{content:'✓';position:absolute;left:0;top:15px;color:#fff;background:var(--grad);
+  width:22px;height:22px;border-radius:50%;font-size:12px;display:grid;place-items:center;font-weight:700}
+.rtiers{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.rtiers-head{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:18px}
+.rtier{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;border-radius:14px;
+  border:1px solid var(--line);margin-top:12px;background:#fff;transition:.25s}
+.rtier:first-of-type{margin-top:0}
+.rtier:hover{border-color:var(--flame);transform:translateX(4px)}
+.rtier .rt-name{font-family:'Sora',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;gap:12px}
+.rtier .rt-dot{width:11px;height:11px;border-radius:50%;flex:none}
+.rtier .rt-vol{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);font-weight:500;margin-left:2px}
+.rtier .rt-off{font-family:'Sora',sans-serif;font-weight:800;font-size:14px;padding:8px 15px;border-radius:100px;white-space:nowrap;color:#fff}
+.rtier .rt-off small{font-weight:600;font-size:12px;opacity:.9}
+.rt1 .rt-dot{background:var(--sun)} .rt1 .rt-off{background:#f7a41c}
+.rt2 .rt-dot{background:var(--flame)} .rt2 .rt-off{background:var(--flame)}
+.rt3 .rt-dot{background:#f0641d} .rt3 .rt-off{background:#f0641d}
+.rtier.hot{background:var(--grad-soft);border-color:var(--flame)}
+.rtier.hot .rt-dot{background:var(--grad)} .rtier.hot .rt-off{background:var(--grad)}
+
+
+.steps{margin-top:44px;counter-reset:st}
+.step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);align-items:start}
+.step:first-child{border-top:0}
+.step .num{counter-increment:st;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:15px;
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--grad)}
+.step .num::before{content:counter(st,decimal-leading-zero)}
+.step h4{font-size:18px;margin-bottom:4px}
+.step p{margin:0;color:var(--ink-soft);font-size:15px}
+
+/* ---------- TU explorer ---------- */
+.tu-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:44px;align-items:center}
+.tu-btns{display:flex;flex-wrap:wrap;gap:12px}
+.tu-btn{font-family:'Inter',sans-serif;font-size:14px;font-weight:600;padding:12px 18px;border-radius:100px;
+  border:1.5px solid var(--line);background:var(--paper);cursor:pointer;transition:.2s;color:var(--ink)}
+.tu-btn:hover{border-color:var(--flame)}
+.tu-btn.active{background:var(--grad);color:#fff;border-color:transparent}
+.tu-readout{background:var(--night);color:#fff;border-radius:22px;padding:40px;text-align:center;box-shadow:var(--shadow)}
+.tu-readout .val{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:64px;line-height:1;color:var(--sun)}
+.tu-readout .val small{font-size:22px;color:#fff}
+.tu-readout .desc{margin-top:14px;font-size:15px;color:rgba(255,255,255,.82);min-height:44px}
+.tu-readout .hint{margin-top:18px;font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:1px;color:var(--teal);text-transform:uppercase}
+
+/* map flow */
+.flow{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:40px;
+  background:var(--grad-soft);border:1px solid var(--line);border-radius:22px;padding:30px}
+.flow .node{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 22px;text-align:center;font-weight:600;font-size:14px}
+.flow .node small{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--flame);font-weight:600;margin-top:3px}
+.flow .arr{color:var(--flame);font-size:22px;font-weight:700}
+
+/* ---------- why / reasons ---------- */
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+.reason{padding:26px;border-radius:16px;background:var(--paper);border:1px solid var(--line);transition:.25s}
+.reason:hover{border-color:var(--flame);background:var(--grad-soft);transform:translateY(-3px)}
+.reason h4{font-size:17px;color:var(--flame);margin-bottom:6px}
+.reason p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+/* counters */
+.counters{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:52px;text-align:center}
+.counters b{font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(30px,4vw,46px);color:var(--ember);display:block;line-height:1}
+.counters small{font-size:13px;color:var(--ink-soft);letter-spacing:.3px}
+
+/* trusted */
+.trust-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust-row span{border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-size:14px;font-weight:500;color:var(--ink-soft);background:#fff}
+.mc{margin-top:40px;background:var(--night);color:#fff;border-radius:20px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:14px 40px;box-shadow:var(--shadow)}
+.mc h3{color:#fff;grid-column:1/-1;font-size:22px}
+.mc div{padding-left:26px;position:relative;font-size:15px;color:rgba(255,255,255,.86)}
+.mc div::before{content:'✓';position:absolute;left:0;color:var(--sun);font-weight:700}
+
+/* ---------- use-cases (stacked) ---------- */
+.uc-block{margin-top:44px;padding-top:36px;border-top:1px solid var(--line)}
+.uc-block:first-of-type{border-top:0;padding-top:0}
+.uc-head{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+  color:#fff;background:var(--grad);display:inline-block;padding:8px 18px;border-radius:100px;margin-bottom:24px}
+.panel-cols{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.uc-col h4{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--flame);margin-bottom:14px}
+.uc-col ul{list-style:none;padding:0;margin:0}
+.uc-col li{padding:9px 0 9px 26px;position:relative;font-size:14.5px;border-top:1px solid var(--line)}
+.uc-col li:first-child{border-top:0}
+.uc-col li::before{content:'';position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--flame)}
+
+/* ---------- shocking truth ---------- */
+.truth{padding:72px 24px}
+.truth-line{font-family:'Sora',sans-serif;font-weight:600;font-size:clamp(22px,3vw,34px);line-height:1.32;
+  letter-spacing:-.4px;color:var(--ink);max-width:20ch;margin:14px 0 0;max-width:900px}
+.truth-line b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+
+/* ---------- outcomes (dark) ---------- */
+.outcomes{background:linear-gradient(180deg,#0b111b 0%,#131c2b 100%);color:#fff}
+.outcomes .eyebrow{color:var(--sun)}
+.outcomes .sec-title{color:#fff}
+.outcomes-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;margin-top:46px;align-items:center}
+.outcomes-viz svg{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.4))}
+.obar{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.obar.b2{transition-delay:.12s}
+.obar.b3{transition-delay:.24s}
+.outcomes.in .obar{transform:scaleY(1)}
+.oarrow{stroke-dasharray:760;stroke-dashoffset:760;transition:stroke-dashoffset 1.1s ease .35s}
+.outcomes.in .oarrow{stroke-dashoffset:0}
+.oc{padding:22px 0;border-top:1px solid rgba(255,255,255,.1)}
+.oc:first-child{border-top:0}
+.oc h3{color:#fff;font-size:23px;margin-bottom:6px}
+.oc h3 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.oc p{color:rgba(255,255,255,.68);font-size:15.5px;max-width:48ch;margin:0}
+
+/* ---------- why choose (accordion) ---------- */
+.acc{margin-top:40px;display:flex;flex-direction:column;gap:14px}
+.acc-item{background:#3a4552;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.08);transition:background .25s}
+.acc-item.open{background:#414d5c}
+.acc-head{width:100%;text-align:left;background:none;border:0;cursor:pointer;color:#fff;
+  font-family:'Sora',sans-serif;font-weight:700;font-size:17px;padding:19px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.acc-head .ar{color:var(--flame);font-size:12px;transition:transform .3s;flex:none}
+.acc-item.open .acc-head .ar{transform:rotate(90deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-body p{color:rgba(255,255,255,.82);font-size:15px;line-height:1.55;padding:0 24px 20px;margin:0}
+.acc-item.open .acc-body{max-height:240px}
+
+/* ---------- testimonial ---------- */
+.testimonial{background:var(--grad);color:#fff;overflow:hidden;position:relative}
+.testimonial::after{content:'';position:absolute;inset:0;background:radial-gradient(700px 400px at 85% 10%,rgba(255,255,255,.22),transparent 60%);pointer-events:none}
+.testimonial .wrap{position:relative;z-index:2;max-width:900px}
+.quote-mark{font-family:'Sora',sans-serif;font-weight:800;font-size:110px;line-height:.4;color:rgba(255,255,255,.45);height:56px}
+.testimonial blockquote{margin:0;font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(26px,3.8vw,46px);letter-spacing:-.6px;line-height:1.12;color:#fff;max-width:20ch}
+.testimonial .attr{margin-top:34px}
+.testimonial .attr b{font-family:'Sora',sans-serif;font-size:22px;color:#fff;display:block}
+.testimonial .attr span{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.85)}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--grad);color:#fff;text-align:center;overflow:hidden;position:relative}
+.cta::after{content:'';position:absolute;inset:0;background:radial-gradient(700px 360px at 50% -20%,rgba(255,255,255,.25),transparent 60%);pointer-events:none}
+.cta .wrap{position:relative;z-index:2}
+.cta h2{color:#fff;font-size:clamp(30px,4.5vw,52px);letter-spacing:-1px}
+.cta p{color:rgba(255,255,255,.94);font-size:18px;margin:16px auto 30px;max-width:540px}
+.cta .contacts{font-family:'IBM Plex Mono',monospace;font-size:16px;margin-top:26px;color:#fff}
+.cta .contacts span{opacity:.7;margin:0 8px}
+
+footer{background:var(--night);color:rgba(255,255,255,.55);text-align:center;padding:34px 24px;font-size:13px}
+
+/* focus */
+button:focus-visible,.tu-btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+
+/* ---------- responsive ---------- */
+@media(max-width:860px){
+  .grid2,.tiers,.tu-wrap,.reasons,.panel-cols,.mc,.res-grid{grid-template-columns:1fr}
+  .res-grid{gap:28px}
+  .counters{grid-template-columns:1fr 1fr}
+  section{padding:74px 22px}
+  .hero{min-height:auto;padding:130px 22px 80px}
+  .tu-readout{order:-1}
+  .dots{display:none}
+  .hero-stats div{min-width:calc(50% - 7px);flex:1}
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero{min-height:auto;padding:118px 22px 64px}
+  .outcomes-grid{grid-template-columns:1fr;gap:30px}
+  .outcomes-viz{max-width:360px}
+}
+
+@media(max-width:480px){
+  section{padding:56px 18px}
+  .hero{padding:116px 18px 62px}
+  .hero h1{font-size:32px;letter-spacing:-1px}
+  .hero p{font-size:16px;margin-top:20px}
+  .hero-stats{gap:10px;margin-top:36px}
+  .hero-stats div{padding:13px 14px}
+  .hero-stats b{font-size:26px}
+  .lead{font-size:16px}
+  .sec-title{font-size:26px}
+  .eyebrow{letter-spacing:2px}
+  .model{padding:24px}
+  .tier{padding:24px;min-height:0}
+  .rtiers{padding:18px}
+  .rtier{padding:13px 14px;gap:10px}
+  .rtier .rt-name{font-size:14px;gap:9px}
+  .rtier .rt-vol{font-size:11.5px}
+  .rtier .rt-off{font-size:13px;padding:7px 11px}
+  .res-benefits li{font-size:15px;padding:13px 0 13px 34px}
+  .tu-readout{padding:26px}
+  .tu-readout .val{font-size:46px}
+  .tu-btn{font-size:13px;padding:10px 14px}
+  .flow{padding:20px;gap:10px}
+  .flow .node{padding:12px 16px;font-size:13px}
+  .step{grid-template-columns:46px 1fr;gap:16px}
+  .step .num{width:44px;height:44px;font-size:13px}
+  .mc{padding:24px;gap:12px}
+  .counters{gap:16px}
+  .hero-kpis{grid-template-columns:1fr 1fr}
+  .btn{font-size:14px;padding:13px 20px}
+  .oc h3{font-size:20px}
+  .acc-head{font-size:15px;padding:16px 18px}
+  .truth-line{font-size:21px}
+  .testimonial blockquote{font-size:26px}
+}
+
+/* ---------- interactive offer ---------- */
+.of-chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+.of-chips span{font-size:13px;font-weight:600;padding:8px 14px;border-radius:100px;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.of-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;margin-top:44px;align-items:start}
+.of-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.of-ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:22px}
+.of-sw{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;background:none;border:1.5px solid var(--line);border-radius:100px;padding:8px 16px 8px 10px;cursor:pointer;color:var(--ink);font-family:'Inter',sans-serif;transition:.2s}
+.of-sw:hover{border-color:var(--flame)}
+.of-sw i{width:38px;height:22px;border-radius:100px;background:#e4d6c6;position:relative;transition:.2s;flex:none}
+.of-sw i::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
+.of-sw[aria-checked="true"] i{background:var(--teal)}
+.of-sw[aria-checked="true"] i::after{left:19px}
+.of-row{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:16px 0;border-top:1px solid var(--line);align-items:baseline}
+.of-row:first-of-type{border-top:0}
+.of-row b{font-family:'Sora',sans-serif;font-size:16px}
+.of-row small{grid-column:1;color:var(--ink-soft);font-size:13px;line-height:1.45}
+.of-row .amt{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;text-align:right;grid-row:1;grid-column:2}
+.of-row .amt s{color:var(--ink-soft);font-weight:400;font-size:14px;margin-right:8px}
+.of-row .amt.free{color:var(--teal)}
+.of-row[hidden]{display:none}
+.of-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;background:var(--grad-soft);color:var(--flame);padding:3px 9px;border-radius:100px;margin-left:8px;vertical-align:middle;font-weight:600}
+.of-sum{background:var(--night);color:#fff;border-radius:22px;padding:34px;box-shadow:var(--shadow);position:sticky;top:84px}
+.of-sum .lab{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.of-sum .tot{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:56px;line-height:1.05;color:var(--sun);margin:12px 0 4px}
+.of-sum .sub{font-size:14px;color:rgba(255,255,255,.75)}
+.of-save{margin:22px 0 0;padding:14px 16px;border-radius:14px;background:rgba(22,160,133,.18);border:1px solid rgba(22,160,133,.5);font-size:14px;color:#bff2e6}
+.of-save b{color:#fff}
+.of-facts{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:9px;font-size:14px;color:rgba(255,255,255,.88)}
+.of-facts li{padding-left:22px;position:relative}
+.of-facts li::before{content:'';position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--grad)}
+.of-cta{display:inline-block;margin-top:26px;background:var(--grad);color:#fff;font-weight:600;text-decoration:none;padding:14px 24px;border-radius:100px;font-size:15px}
+.of-note{font-size:12.5px;color:var(--ink-soft);margin-top:16px}
+
+.of-ctl{flex-direction:column;align-items:flex-start;gap:14px}
+.of-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;font-weight:600}
+.of-vol{margin-top:14px;padding:12px 16px;border-radius:14px;background:var(--grad-soft);font-size:13.5px;color:var(--ink)}
+@media (max-width:900px){.of-grid{grid-template-columns:1fr}.of-sum{position:static}.of-sum .tot{font-size:44px}.of-card{padding:22px}}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .scroll-cue .dot::after{animation:none}
+  .hero-viz .arc{stroke-dashoffset:0;animation:none;opacity:.85}
+  .hero-viz .hub,.hero-viz .ring,.hero-viz .mapdots circle{animation:none;opacity:1}
+  .obar{transition:none;transform:scaleY(1)}
+  .oarrow{transition:none;stroke-dashoffset:0}
+  .hero-card-head .live i{animation:none}
+  .acc-body{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand-tag">Partner Program</span>
+  </div>
+</div>
+
+<!-- side dot nav -->
+<nav class="dots" id="dots" aria-label="Sections"></nav>
+
+<!-- HERO -->
+<header class="hero" id="s-hero">
+  <svg class="hero-viz" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/></pattern><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="rgba(255,255,255,.22)"/><stop offset="1" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><rect width="1200" height="700" fill="url(#grid)"/><circle cx="727" cy="514" r="240" fill="url(#glow)"/><g class="mapdots"><circle cx="405" cy="340" r="2.1"/><circle cx="405" cy="355" r="2.1"/><circle cx="405" cy="370" r="2.1"/><circle cx="420" cy="325" r="2.1"/><circle cx="420" cy="340" r="2.1"/><circle cx="420" cy="355" r="2.1"/><circle cx="420" cy="505" r="2.1"/><circle cx="420" cy="520" r="2.1"/><circle cx="420" cy="535" r="2.1"/><circle cx="420" cy="550" r="2.1"/><circle cx="420" cy="565" r="2.1"/><circle cx="420" cy="580" r="2.1"/><circle cx="420" cy="595" r="2.1"/><circle cx="435" cy="325" r="2.1"/><circle cx="435" cy="340" r="2.1"/><circle cx="435" cy="505" r="2.1"/><circle cx="435" cy="520" r="2.1"/><circle cx="435" cy="535" r="2.1"/><circle cx="435" cy="550" r="2.1"/><circle cx="435" cy="565" r="2.1"/><circle cx="435" cy="580" r="2.1"/><circle cx="435" cy="595" r="2.1"/><circle cx="435" cy="610" r="2.1"/><circle cx="450" cy="265" r="2.1"/><circle cx="450" cy="280" r="2.1"/><circle cx="450" cy="295" r="2.1"/><circle cx="450" cy="310" r="2.1"/><circle cx="450" cy="385" r="2.1"/><circle cx="450" cy="505" r="2.1"/><circle cx="450" cy="520" r="2.1"/><circle cx="450" cy="535" r="2.1"/><circle cx="450" cy="550" r="2.1"/><circle cx="450" cy="565" r="2.1"/><circle cx="450" cy="580" r="2.1"/><circle cx="450" cy="595" r="2.1"/><circle cx="450" cy="610" r="2.1"/><circle cx="465" cy="250" r="2.1"/><circle cx="465" cy="280" r="2.1"/><circle cx="465" cy="295" r="2.1"/><circle cx="465" cy="310" r="2.1"/><circle cx="465" cy="325" r="2.1"/><circle cx="465" cy="355" r="2.1"/><circle cx="465" cy="370" r="2.1"/><circle cx="465" cy="415" r="2.1"/><circle cx="465" cy="430" r="2.1"/><circle cx="465" cy="505" r="2.1"/><circle cx="465" cy="520" r="2.1"/><circle cx="465" cy="535" r="2.1"/><circle cx="465" cy="550" r="2.1"/><circle cx="465" cy="565" r="2.1"/><circle cx="465" cy="580" r="2.1"/><circle cx="465" cy="595" r="2.1"/><circle cx="465" cy="610" r="2.1"/><circle cx="480" cy="310" r="2.1"/><circle cx="480" cy="325" r="2.1"/><circle cx="480" cy="340" r="2.1"/><circle cx="480" cy="355" r="2.1"/><circle cx="480" cy="370" r="2.1"/><circle cx="480" cy="430" r="2.1"/><circle cx="480" cy="445" r="2.1"/><circle cx="480" cy="505" r="2.1"/><circle cx="480" cy="520" r="2.1"/><circle cx="480" cy="535" r="2.1"/><circle cx="480" cy="550" r="2.1"/><circle cx="480" cy="565" r="2.1"/><circle cx="480" cy="580" r="2.1"/><circle cx="480" cy="595" r="2.1"/><circle cx="495" cy="340" r="2.1"/><circle cx="495" cy="355" r="2.1"/><circle cx="495" cy="370" r="2.1"/><circle cx="495" cy="415" r="2.1"/><circle cx="495" cy="430" r="2.1"/><circle cx="495" cy="445" r="2.1"/><circle cx="495" cy="460" r="2.1"/><circle cx="495" cy="475" r="2.1"/><circle cx="495" cy="490" r="2.1"/><circle cx="495" cy="505" r="2.1"/><circle cx="495" cy="520" r="2.1"/><circle cx="495" cy="535" r="2.1"/><circle cx="495" cy="550" r="2.1"/><circle cx="495" cy="580" r="2.1"/><circle cx="510" cy="355" r="2.1"/><circle cx="510" cy="400" r="2.1"/><circle cx="510" cy="415" r="2.1"/><circle cx="510" cy="430" r="2.1"/><circle cx="510" cy="445" r="2.1"/><circle cx="510" cy="460" r="2.1"/><circle cx="510" cy="475" r="2.1"/><circle cx="510" cy="490" r="2.1"/><circle cx="510" cy="505" r="2.1"/><circle cx="510" cy="520" r="2.1"/><circle cx="510" cy="535" r="2.1"/><circle cx="525" cy="385" r="2.1"/><circle cx="525" cy="400" r="2.1"/><circle cx="525" cy="415" r="2.1"/><circle cx="525" cy="430" r="2.1"/><circle cx="525" cy="445" r="2.1"/><circle cx="525" cy="460" r="2.1"/><circle cx="525" cy="475" r="2.1"/><circle cx="525" cy="490" r="2.1"/><circle cx="525" cy="505" r="2.1"/><circle cx="525" cy="520" r="2.1"/><circle cx="525" cy="565" r="2.1"/><circle cx="540" cy="370" r="2.1"/><circle cx="540" cy="385" r="2.1"/><circle cx="540" cy="400" r="2.1"/><circle cx="540" cy="415" r="2.1"/><circle cx="540" cy="430" r="2.1"/><circle cx="540" cy="445" r="2.1"/><circle cx="540" cy="460" r="2.1"/><circle cx="540" cy="475" r="2.1"/><circle cx="540" cy="490" r="2.1"/><circle cx="555" cy="205" r="2.1"/><circle cx="555" cy="220" r="2.1"/><circle cx="555" cy="235" r="2.1"/><circle cx="555" cy="355" r="2.1"/><circle cx="555" cy="370" r="2.1"/><circle cx="555" cy="385" r="2.1"/><circle cx="555" cy="400" r="2.1"/><circle cx="555" cy="415" r="2.1"/><circle cx="555" cy="430" r="2.1"/><circle cx="555" cy="445" r="2.1"/><circle cx="555" cy="460" r="2.1"/><circle cx="555" cy="475" r="2.1"/><circle cx="555" cy="490" r="2.1"/><circle cx="555" cy="505" r="2.1"/><circle cx="570" cy="205" r="2.1"/><circle cx="570" cy="220" r="2.1"/><circle cx="570" cy="235" r="2.1"/><circle cx="570" cy="250" r="2.1"/><circle cx="570" cy="265" r="2.1"/><circle cx="570" cy="340" r="2.1"/><circle cx="570" cy="355" r="2.1"/><circle cx="570" cy="370" r="2.1"/><circle cx="570" cy="385" r="2.1"/><circle cx="570" cy="400" r="2.1"/><circle cx="570" cy="415" r="2.1"/><circle cx="570" cy="430" r="2.1"/><circle cx="570" cy="445" r="2.1"/><circle cx="570" cy="460" r="2.1"/><circle cx="570" cy="475" r="2.1"/><circle cx="570" cy="490" r="2.1"/><circle cx="585" cy="175" r="2.1"/><circle cx="585" cy="190" r="2.1"/><circle cx="585" cy="205" r="2.1"/><circle cx="585" cy="220" r="2.1"/><circle cx="585" cy="235" r="2.1"/><circle cx="585" cy="250" r="2.1"/><circle cx="585" cy="280" r="2.1"/><circle cx="585" cy="295" r="2.1"/><circle cx="585" cy="310" r="2.1"/><circle cx="585" cy="325" r="2.1"/><circle cx="585" cy="340" r="2.1"/><circle cx="585" cy="355" r="2.1"/><circle cx="585" cy="370" r="2.1"/><circle cx="585" cy="385" r="2.1"/><circle cx="585" cy="400" r="2.1"/><circle cx="585" cy="415" r="2.1"/><circle cx="585" cy="430" r="2.1"/><circle cx="585" cy="445" r="2.1"/><circle cx="585" cy="460" r="2.1"/><circle cx="585" cy="475" r="2.1"/><circle cx="585" cy="520" r="2.1"/><circle cx="585" cy="550" r="2.1"/><circle cx="585" cy="565" r="2.1"/><circle cx="600" cy="190" r="2.1"/><circle cx="600" cy="205" r="2.1"/><circle cx="600" cy="220" r="2.1"/><circle cx="600" cy="235" r="2.1"/><circle cx="600" cy="295" r="2.1"/><circle cx="600" cy="310" r="2.1"/><circle cx="600" cy="325" r="2.1"/><circle cx="600" cy="340" r="2.1"/><circle cx="600" cy="355" r="2.1"/><circle cx="600" cy="370" r="2.1"/><circle cx="600" cy="385" r="2.1"/><circle cx="600" cy="400" r="2.1"/><circle cx="600" cy="415" r="2.1"/><circle cx="600" cy="430" r="2.1"/><circle cx="600" cy="445" r="2.1"/><circle cx="600" cy="460" r="2.1"/><circle cx="600" cy="475" r="2.1"/><circle cx="600" cy="490" r="2.1"/><circle cx="615" cy="160" r="2.1"/><circle cx="615" cy="175" r="2.1"/><circle cx="615" cy="190" r="2.1"/><circle cx="615" cy="205" r="2.1"/><circle cx="615" cy="220" r="2.1"/><circle cx="615" cy="235" r="2.1"/><circle cx="615" cy="250" r="2.1"/><circle cx="615" cy="265" r="2.1"/><circle cx="615" cy="310" r="2.1"/><circle cx="615" cy="340" r="2.1"/><circle cx="615" cy="355" r="2.1"/><circle cx="615" cy="370" r="2.1"/><circle cx="615" cy="385" r="2.1"/><circle cx="615" cy="400" r="2.1"/><circle cx="615" cy="415" r="2.1"/><circle cx="615" cy="430" r="2.1"/><circle cx="615" cy="445" r="2.1"/><circle cx="615" cy="460" r="2.1"/><circle cx="615" cy="475" r="2.1"/><circle cx="615" cy="490" r="2.1"/><circle cx="615" cy="505" r="2.1"/><circle cx="615" cy="520" r="2.1"/><circle cx="615" cy="610" r="2.1"/><circle cx="630" cy="100" r="2.1"/><circle cx="630" cy="130" r="2.1"/><circle cx="630" cy="145" r="2.1"/><circle cx="630" cy="160" r="2.1"/><circle cx="630" cy="175" r="2.1"/><circle cx="630" cy="190" r="2.1"/><circle cx="630" cy="205" r="2.1"/><circle cx="630" cy="220" r="2.1"/><circle cx="630" cy="235" r="2.1"/><circle cx="630" cy="250" r="2.1"/><circle cx="630" cy="265" r="2.1"/><circle cx="630" cy="280" r="2.1"/><circle cx="630" cy="295" r="2.1"/><circle cx="630" cy="325" r="2.1"/><circle cx="630" cy="340" r="2.1"/><circle cx="630" cy="355" r="2.1"/><circle cx="630" cy="370" r="2.1"/><circle cx="630" cy="385" r="2.1"/><circle cx="630" cy="400" r="2.1"/><circle cx="630" cy="415" r="2.1"/><circle cx="630" cy="430" r="2.1"/><circle cx="630" cy="445" r="2.1"/><circle cx="630" cy="460" r="2.1"/><circle cx="630" cy="505" r="2.1"/><circle cx="630" cy="520" r="2.1"/><circle cx="630" cy="535" r="2.1"/><circle cx="630" cy="595" r="2.1"/><circle cx="645" cy="115" r="2.1"/><circle cx="645" cy="130" r="2.1"/><circle cx="645" cy="145" r="2.1"/><circle cx="645" cy="160" r="2.1"/><circle cx="645" cy="175" r="2.1"/><circle cx="645" cy="190" r="2.1"/><circle cx="645" cy="205" r="2.1"/><circle cx="645" cy="220" r="2.1"/><circle cx="645" cy="235" r="2.1"/><circle cx="645" cy="250" r="2.1"/><circle cx="645" cy="265" r="2.1"/><circle cx="645" cy="280" r="2.1"/><circle cx="645" cy="295" r="2.1"/><circle cx="645" cy="340" r="2.1"/><circle cx="645" cy="355" r="2.1"/><circle cx="645" cy="370" r="2.1"/><circle cx="645" cy="385" r="2.1"/><circle cx="645" cy="400" r="2.1"/><circle cx="645" cy="415" r="2.1"/><circle cx="645" cy="430" r="2.1"/><circle cx="645" cy="445" r="2.1"/><circle cx="645" cy="460" r="2.1"/><circle cx="645" cy="475" r="2.1"/><circle cx="645" cy="535" r="2.1"/><circle cx="645" cy="550" r="2.1"/><circle cx="645" cy="595" r="2.1"/><circle cx="645" cy="610" r="2.1"/><circle cx="660" cy="115" r="2.1"/><circle cx="660" cy="130" r="2.1"/><circle cx="660" cy="145" r="2.1"/><circle cx="660" cy="160" r="2.1"/><circle cx="660" cy="175" r="2.1"/><circle cx="660" cy="190" r="2.1"/><circle cx="660" cy="205" r="2.1"/><circle cx="660" cy="220" r="2.1"/><circle cx="660" cy="235" r="2.1"/><circle cx="660" cy="250" r="2.1"/><circle cx="660" cy="265" r="2.1"/><circle cx="660" cy="325" r="2.1"/><circle cx="660" cy="340" r="2.1"/><circle cx="660" cy="355" r="2.1"/><circle cx="660" cy="370" r="2.1"/><circle cx="660" cy="385" r="2.1"/><circle cx="660" cy="400" r="2.1"/><circle cx="660" cy="415" r="2.1"/><circle cx="660" cy="430" r="2.1"/><circle cx="660" cy="445" r="2.1"/><circle cx="660" cy="460" r="2.1"/><circle cx="660" cy="475" r="2.1"/><circle cx="660" cy="490" r="2.1"/><circle cx="660" cy="550" r="2.1"/><circle cx="660" cy="565" r="2.1"/><circle cx="675" cy="100" r="2.1"/><circle cx="675" cy="115" r="2.1"/><circle cx="675" cy="130" r="2.1"/><circle cx="675" cy="145" r="2.1"/><circle cx="675" cy="160" r="2.1"/><circle cx="675" cy="175" r="2.1"/><circle cx="675" cy="235" r="2.1"/><circle cx="675" cy="325" r="2.1"/><circle cx="675" cy="340" r="2.1"/><circle cx="675" cy="355" r="2.1"/><circle cx="675" cy="370" r="2.1"/><circle cx="675" cy="385" r="2.1"/><circle cx="675" cy="400" r="2.1"/><circle cx="675" cy="415" r="2.1"/><circle cx="675" cy="430" r="2.1"/><circle cx="675" cy="445" r="2.1"/><circle cx="675" cy="460" r="2.1"/><circle cx="675" cy="475" r="2.1"/><circle cx="675" cy="490" r="2.1"/><circle cx="675" cy="505" r="2.1"/><circle cx="675" cy="550" r="2.1"/><circle cx="690" cy="85" r="2.1"/><circle cx="690" cy="100" r="2.1"/><circle cx="690" cy="115" r="2.1"/><circle cx="690" cy="130" r="2.1"/><circle cx="690" cy="145" r="2.1"/><circle cx="690" cy="160" r="2.1"/><circle cx="690" cy="175" r="2.1"/><circle cx="690" cy="340" r="2.1"/><circle cx="690" cy="355" r="2.1"/><circle cx="690" cy="370" r="2.1"/><circle cx="690" cy="385" r="2.1"/><circle cx="690" cy="400" r="2.1"/><circle cx="690" cy="415" r="2.1"/><circle cx="690" cy="430" r="2.1"/><circle cx="690" cy="445" r="2.1"/><circle cx="690" cy="460" r="2.1"/><circle cx="690" cy="475" r="2.1"/><circle cx="690" cy="490" r="2.1"/><circle cx="690" cy="505" r="2.1"/><circle cx="690" cy="520" r="2.1"/><circle cx="690" cy="535" r="2.1"/><circle cx="690" cy="550" r="2.1"/><circle cx="705" cy="85" r="2.1"/><circle cx="705" cy="100" r="2.1"/><circle cx="705" cy="115" r="2.1"/><circle cx="705" cy="130" r="2.1"/><circle cx="705" cy="145" r="2.1"/><circle cx="705" cy="160" r="2.1"/><circle cx="705" cy="190" r="2.1"/><circle cx="705" cy="295" r="2.1"/><circle cx="705" cy="340" r="2.1"/><circle cx="705" cy="355" r="2.1"/><circle cx="705" cy="370" r="2.1"/><circle cx="705" cy="385" r="2.1"/><circle cx="705" cy="400" r="2.1"/><circle cx="705" cy="415" r="2.1"/><circle cx="705" cy="430" r="2.1"/><circle cx="705" cy="445" r="2.1"/><circle cx="705" cy="460" r="2.1"/><circle cx="705" cy="475" r="2.1"/><circle cx="705" cy="490" r="2.1"/><circle cx="705" cy="505" r="2.1"/><circle cx="705" cy="520" r="2.1"/><circle cx="705" cy="535" r="2.1"/><circle cx="705" cy="550" r="2.1"/><circle cx="705" cy="565" r="2.1"/><circle cx="705" cy="580" r="2.1"/><circle cx="720" cy="70" r="2.1"/><circle cx="720" cy="85" r="2.1"/><circle cx="720" cy="100" r="2.1"/><circle cx="720" cy="115" r="2.1"/><circle cx="720" cy="130" r="2.1"/><circle cx="720" cy="175" r="2.1"/><circle cx="720" cy="190" r="2.1"/><circle cx="720" cy="205" r="2.1"/><circle cx="720" cy="220" r="2.1"/><circle cx="720" cy="250" r="2.1"/><circle cx="720" cy="280" r="2.1"/><circle cx="720" cy="295" r="2.1"/><circle cx="720" cy="310" r="2.1"/><circle cx="720" cy="325" r="2.1"/><circle cx="720" cy="340" r="2.1"/><circle cx="720" cy="355" r="2.1"/><circle cx="720" cy="370" r="2.1"/><circle cx="720" cy="385" r="2.1"/><circle cx="720" cy="400" r="2.1"/><circle cx="720" cy="415" r="2.1"/><circle cx="720" cy="430" r="2.1"/><circle cx="720" cy="445" r="2.1"/><circle cx="720" cy="460" r="2.1"/><circle cx="720" cy="475" r="2.1"/><circle cx="720" cy="490" r="2.1"/><circle cx="720" cy="505" r="2.1"/><circle cx="720" cy="520" r="2.1"/><circle cx="720" cy="535" r="2.1"/><circle cx="720" cy="565" r="2.1"/><circle cx="720" cy="580" r="2.1"/><circle cx="720" cy="595" r="2.1"/><circle cx="735" cy="55" r="2.1"/><circle cx="735" cy="70" r="2.1"/><circle cx="735" cy="85" r="2.1"/><circle cx="735" cy="100" r="2.1"/><circle cx="735" cy="115" r="2.1"/><circle cx="735" cy="130" r="2.1"/><circle cx="735" cy="175" r="2.1"/><circle cx="735" cy="190" r="2.1"/><circle cx="735" cy="205" r="2.1"/><circle cx="735" cy="220" r="2.1"/><circle cx="735" cy="250" r="2.1"/><circle cx="735" cy="295" r="2.1"/><circle cx="735" cy="310" r="2.1"/><circle cx="735" cy="325" r="2.1"/><circle cx="735" cy="340" r="2.1"/><circle cx="735" cy="355" r="2.1"/><circle cx="735" cy="370" r="2.1"/><circle cx="735" cy="385" r="2.1"/><circle cx="735" cy="400" r="2.1"/><circle cx="735" cy="415" r="2.1"/><circle cx="735" cy="430" r="2.1"/><circle cx="735" cy="445" r="2.1"/><circle cx="735" cy="460" r="2.1"/><circle cx="735" cy="475" r="2.1"/><circle cx="735" cy="490" r="2.1"/><circle cx="735" cy="505" r="2.1"/><circle cx="735" cy="520" r="2.1"/><circle cx="735" cy="535" r="2.1"/><circle cx="750" cy="55" r="2.1"/><circle cx="750" cy="70" r="2.1"/><circle cx="750" cy="85" r="2.1"/><circle cx="750" cy="100" r="2.1"/><circle cx="750" cy="115" r="2.1"/><circle cx="750" cy="130" r="2.1"/><circle cx="750" cy="145" r="2.1"/><circle cx="750" cy="160" r="2.1"/><circle cx="750" cy="175" r="2.1"/><circle cx="750" cy="190" r="2.1"/><circle cx="750" cy="205" r="2.1"/><circle cx="750" cy="220" r="2.1"/><circle cx="750" cy="250" r="2.1"/><circle cx="750" cy="265" r="2.1"/><circle cx="750" cy="280" r="2.1"/><circle cx="750" cy="295" r="2.1"/><circle cx="750" cy="310" r="2.1"/><circle cx="750" cy="325" r="2.1"/><circle cx="750" cy="340" r="2.1"/><circle cx="750" cy="355" r="2.1"/><circle cx="750" cy="370" r="2.1"/><circle cx="750" cy="385" r="2.1"/><circle cx="750" cy="400" r="2.1"/><circle cx="750" cy="415" r="2.1"/><circle cx="750" cy="430" r="2.1"/><circle cx="750" cy="445" r="2.1"/><circle cx="750" cy="460" r="2.1"/><circle cx="750" cy="475" r="2.1"/><circle cx="750" cy="490" r="2.1"/><circle cx="750" cy="505" r="2.1"/><circle cx="750" cy="520" r="2.1"/><circle cx="750" cy="535" r="2.1"/><circle cx="765" cy="55" r="2.1"/><circle cx="765" cy="70" r="2.1"/><circle cx="765" cy="85" r="2.1"/><circle cx="765" cy="100" r="2.1"/><circle cx="765" cy="115" r="2.1"/><circle cx="765" cy="130" r="2.1"/><circle cx="765" cy="145" r="2.1"/><circle cx="765" cy="160" r="2.1"/><circle cx="765" cy="175" r="2.1"/><circle cx="765" cy="190" r="2.1"/><circle cx="765" cy="205" r="2.1"/><circle cx="765" cy="220" r="2.1"/><circle cx="765" cy="250" r="2.1"/><circle cx="765" cy="265" r="2.1"/><circle cx="765" cy="280" r="2.1"/><circle cx="765" cy="295" r="2.1"/><circle cx="765" cy="310" r="2.1"/><circle cx="765" cy="325" r="2.1"/><circle cx="765" cy="340" r="2.1"/><circle cx="765" cy="355" r="2.1"/><circle cx="765" cy="370" r="2.1"/><circle cx="765" cy="385" r="2.1"/><circle cx="765" cy="400" r="2.1"/><circle cx="765" cy="415" r="2.1"/><circle cx="765" cy="430" r="2.1"/><circle cx="765" cy="445" r="2.1"/><circle cx="765" cy="460" r="2.1"/><circle cx="765" cy="475" r="2.1"/><circle cx="765" cy="490" r="2.1"/><circle cx="765" cy="505" r="2.1"/><circle cx="765" cy="520" r="2.1"/><circle cx="765" cy="535" r="2.1"/><circle cx="765" cy="565" r="2.1"/><circle cx="765" cy="580" r="2.1"/><circle cx="780" cy="70" r="2.1"/><circle cx="780" cy="85" r="2.1"/><circle cx="780" cy="115" r="2.1"/><circle cx="780" cy="130" r="2.1"/><circle cx="780" cy="145" r="2.1"/><circle cx="780" cy="160" r="2.1"/><circle cx="780" cy="175" r="2.1"/><circle cx="780" cy="190" r="2.1"/><circle cx="780" cy="205" r="2.1"/><circle cx="780" cy="310" r="2.1"/><circle cx="780" cy="325" r="2.1"/><circle cx="780" cy="340" r="2.1"/><circle cx="780" cy="355" r="2.1"/><circle cx="780" cy="370" r="2.1"/><circle cx="780" cy="385" r="2.1"/><circle cx="780" cy="400" r="2.1"/><circle cx="780" cy="415" r="2.1"/><circle cx="780" cy="430" r="2.1"/><circle cx="780" cy="445" r="2.1"/><circle cx="780" cy="460" r="2.1"/><circle cx="780" cy="475" r="2.1"/><circle cx="780" cy="565" r="2.1"/><circle cx="780" cy="580" r="2.1"/><circle cx="780" cy="595" r="2.1"/><circle cx="780" cy="610" r="2.1"/><circle cx="795" cy="190" r="2.1"/><circle cx="795" cy="310" r="2.1"/><circle cx="795" cy="325" r="2.1"/><circle cx="795" cy="340" r="2.1"/><circle cx="795" cy="355" r="2.1"/><circle cx="795" cy="370" r="2.1"/><circle cx="795" cy="385" r="2.1"/><circle cx="795" cy="400" r="2.1"/><circle cx="795" cy="415" r="2.1"/><circle cx="795" cy="430" r="2.1"/><circle cx="795" cy="445" r="2.1"/><circle cx="795" cy="460" r="2.1"/><circle cx="795" cy="550" r="2.1"/><circle cx="795" cy="565" r="2.1"/><circle cx="795" cy="580" r="2.1"/><circle cx="795" cy="595" r="2.1"/><circle cx="795" cy="610" r="2.1"/><circle cx="810" cy="340" r="2.1"/><circle cx="810" cy="370" r="2.1"/><circle cx="810" cy="385" r="2.1"/><circle cx="810" cy="400" r="2.1"/><circle cx="810" cy="415" r="2.1"/><circle cx="810" cy="430" r="2.1"/><circle cx="810" cy="445" r="2.1"/><circle cx="810" cy="535" r="2.1"/><circle cx="810" cy="550" r="2.1"/><circle cx="810" cy="565" r="2.1"/><circle cx="810" cy="580" r="2.1"/><circle cx="810" cy="595" r="2.1"/><circle cx="810" cy="610" r="2.1"/></g><g class="arcs"><path class="arc" pathLength="600" d="M726.6,513.9 Q690.3,410.5 582.0,393.8" style="animation-delay:0.00s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q682.7,381.0 544.7,357.1" style="animation-delay:0.42s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q653.0,401.9 519.5,414.0" style="animation-delay:0.84s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q582.1,452.4 459.8,550.9" style="animation-delay:1.26s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q781.5,363.5 674.7,244.2" style="animation-delay:1.68s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q761.5,429.8 703.8,359.4" style="animation-delay:2.10s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q669.3,488.4 619.7,526.9" style="animation-delay:2.52s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q653.7,373.0 495.1,371.1" style="animation-delay:2.94s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q719.1,448.7 657.9,424.6" style="animation-delay:3.36s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q705.6,553.4 730.6,590.5" style="animation-delay:3.78s"/><path class="arc" pathLength="600" d="M726.6,513.9 Q748.7,508.1 754.0,485.9" style="animation-delay:4.20s"/></g><g class="hubs"><circle class="ring" cx="726.6" cy="513.9" r="6.5" style="animation-delay:0.00s"/><circle class="hub sofia" cx="726.6" cy="513.9" r="6.5" style="animation-delay:0.00s"/><circle class="ring" cx="657.9" cy="424.6" r="4.2" style="animation-delay:0.40s"/><circle class="hub" cx="657.9" cy="424.6" r="4.2" style="animation-delay:0.40s"/><circle class="ring" cx="582.0" cy="393.8" r="4.2" style="animation-delay:0.80s"/><circle class="hub" cx="582.0" cy="393.8" r="4.2" style="animation-delay:0.80s"/><circle class="ring" cx="544.7" cy="357.1" r="4.2" style="animation-delay:1.20s"/><circle class="hub" cx="544.7" cy="357.1" r="4.2" style="animation-delay:1.20s"/><circle class="ring" cx="703.8" cy="359.4" r="4.2" style="animation-delay:1.60s"/><circle class="hub" cx="703.8" cy="359.4" r="4.2" style="animation-delay:1.60s"/><circle class="ring" cx="459.8" cy="550.9" r="4.2" style="animation-delay:2.00s"/><circle class="hub" cx="459.8" cy="550.9" r="4.2" style="animation-delay:2.00s"/><circle class="ring" cx="519.5" cy="414.0" r="4.2" style="animation-delay:2.40s"/><circle class="hub" cx="519.5" cy="414.0" r="4.2" style="animation-delay:2.40s"/><circle class="ring" cx="619.7" cy="526.9" r="4.2" style="animation-delay:2.80s"/><circle class="hub" cx="619.7" cy="526.9" r="4.2" style="animation-delay:2.80s"/><circle class="ring" cx="730.6" cy="590.5" r="4.2" style="animation-delay:3.20s"/><circle class="hub" cx="730.6" cy="590.5" r="4.2" style="animation-delay:3.20s"/><circle class="ring" cx="674.7" cy="244.2" r="4.2" style="animation-delay:3.60s"/><circle class="hub" cx="674.7" cy="244.2" r="4.2" style="animation-delay:3.60s"/><circle class="ring" cx="754.0" cy="485.9" r="4.2" style="animation-delay:4.00s"/><circle class="hub" cx="754.0" cy="485.9" r="4.2" style="animation-delay:4.00s"/><circle class="ring" cx="495.1" cy="371.1" r="4.2" style="animation-delay:4.40s"/><circle class="hub" cx="495.1" cy="371.1" r="4.2" style="animation-delay:4.40s"/></g></svg>
+
+  <div class="wrap">
+    <div class="frame show"><span>Partner Program · 2026 · Prepared for Verdocs</span></div>
+    <h1>Grow your business on top of an EU trust infrastructure.</h1>
+    <p>Sell or embed qualified eID and e-signature into your platform — and earn on every client you bring to Evrotrust.</p>
+    <div class="hero-stats">
+      <div><b>250+</b><small>clients</small></div>
+      <div><b>15+</b><small>major EU banks</small></div>
+      <div><b>2.5M+</b><small>users</small></div>
+      <div><b>61</b><small>nationalities</small></div>
+    </div>
+    <div class="scroll-cue"><span class="dot"></span> Scroll to explore</div>
+  </div>
+</header>
+
+<!-- INTERACTIVE OFFER (page 2) -->
+<section class="reveal tint" id="s-offer">
+  <div class="wrap">
+    <div class="eyebrow">Commercial offer · Verdocs</div>
+    <h2 class="sec-title">Embed qualified e-signatures in Verdocs.</h2>
+    <p class="lead" style="margin-top:18px">Evrotrust is a notified EU QTSP: legally binding QES across all 27 member states. Integrate with the Web SDK inside your product, or via API by redirecting your users to the Evrotrust app. Choose the integration and see what each year costs.</p>
+    <div class="of-chips"><span>Web SDK or API</span><span>QES via OTP, 1 TU per signature</span><span>Reseller model: you own the client</span></div>
+
+    <div class="of-grid">
+      <div class="of-card">
+        <div class="of-ctl">
+          <div>
+            <div class="of-lbl">Integration</div>
+            <div class="tu-btns" id="ofMode" role="tablist">
+              <button class="tu-btn active" data-v="sdk" role="tab" aria-selected="true">Integrate via Web SDK</button>
+              <button class="tu-btn" data-v="api" role="tab" aria-selected="false">Integrate via API</button>
+            </div>
+          </div>
+          <div>
+            <div class="of-lbl">Period</div>
+            <div class="tu-btns" id="ofTabs" role="tablist">
+              <button class="tu-btn active" data-v="y1" role="tab" aria-selected="true">Year 1</button>
+              <button class="tu-btn" data-v="y2" role="tab" aria-selected="false">Year 2</button>
+              <button class="tu-btn" data-v="y3" role="tab" aria-selected="false">Year 3</button>
+              <button class="tu-btn" data-v="all" role="tab" aria-selected="false">3-year total</button>
+            </div>
+          </div>
+        </div>
+        <div id="ofRows"></div>
+        <div class="of-vol"><b>Price for this volume:</b> the €1.40 partner price applies to a package of 500 TU per year (500 QES via OTP). It is the same in years 1, 2 and 3.</div>
+        <p class="of-note">All prices in EUR, excluding VAT. Trust Units are prepaid and valid for 12 months; 1 QES via OTP = 1 TU.</p>
+      </div>
+
+      <aside class="of-sum" aria-live="polite">
+        <div class="lab" id="ofLab">Total, year 1</div>
+        <div class="tot" id="ofTot">€5,700</div>
+        <div class="sub" id="ofSub">Web SDK + 500 Trust Units</div>
+        <div class="of-save" id="ofSave"></div>
+        <ul class="of-facts" id="ofFacts"></ul>
+        <a class="of-cta" href="mailto:preslav.slavov@evrotrust.com?subject=Verdocs%20offer%3A%20500%20TU%20package">Discuss this offer</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- THE SHOCKING TRUTH -->
+<section class="reveal truth tint" id="s-truth">
+  <div class="wrap">
+    <div class="eyebrow">The shocking truth</div>
+    <p class="truth-line">If you don't have end-to-end <b>digital customer engagement</b>, you're already behind. We help partners master that shift — and put their clients on the winning side.</p>
+  </div>
+</section>
+
+<!-- ACHIEVE ENVIABLE OUTCOMES -->
+<section class="reveal outcomes" id="s-outcomes">
+  <div class="wrap">
+    <div class="eyebrow">Proven impact</div>
+    <h2 class="frame sec-title">Achieve enviable outcomes</h2>
+    <div class="outcomes-grid">
+      <div class="outcomes-viz">
+        <svg viewBox="0 0 420 330" aria-hidden="true">
+          <rect class="obar b1" x="40"  y="180" width="86" height="120" rx="10" fill="#ffd24a"/>
+          <rect class="obar b2" x="167" y="120" width="86" height="180" rx="10" fill="#ffab1c"/>
+          <rect class="obar b3" x="294" y="55"  width="86" height="245" rx="10" fill="#f5821f"/>
+          <path class="oarrow" d="M40,250 L165,205 L250,235 L385,70" fill="none" stroke="#1f9bb3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="oarrow" d="M340,70 L388,66 L384,116" fill="none" stroke="#1f9bb3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="outcomes-list">
+        <div class="oc"><h3><span>+300%</span> Faster Growth</h3><p>Typical clients achieve +300% yearly digital growth with +10x improvements in process speed.</p></div>
+        <div class="oc"><h3><span>15x</span> Higher Margins</h3><p>Reduce customer-acquisition costs by 15x and average time-to-serve by 20x.</p></div>
+        <div class="oc"><h3>Lower Risk</h3><p>The highest compliance with the lowest friction — described by a CEE bank CEO as the fastest KYC-compliant solution on the market.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE EVROTRUST -->
+<section class="reveal tint" id="s-why-choose">
+  <div class="wrap">
+    <div class="eyebrow">The difference</div>
+    <h2 class="frame sec-title" style="color:var(--flame)">Why choose Evrotrust?</h2>
+    <p class="lead" style="margin-top:18px;max-width:760px">We are the only electronic identification scheme recognised by the EU Commission (eIDAS) that is fully remote, offers an automated solution, and can onboard individuals of any nationality.</p>
+    <div class="acc">
+      <div class="acc-item open">
+        <button class="acc-head">Unique eIDAS 2.0 Notified eID Scheme <span class="ar">▶</span></button>
+        <div class="acc-body"><p>Unlike other vendors, our eID is unique as it is just like a "Digital Passport". It is automatically accepted by all EU member states (reg. 910 eIDAS), obligatory accepted and soon used in cross-border travels. This also means that it is automatically AML compliant for KYC in all member states (5th AML Directive). The best part is that identification with eID scheme is not considered third-party reliance &amp; we bear the risk for wrongful identification (by law).</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">Amazing Customer Experience <span class="ar">▶</span></button>
+        <div class="acc-body"><p>Omnichannel Qualified Trust Service Provider (QTSP) services enable uninterrupted, seamless and user-friendly digital interactions; all our services can be white-labeled as well. We can facilitate any type of integration: web-only, mobile SDK, API integration or no-integration at all.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">True end-to-end Digital Journey <span class="ar">▶</span></button>
+        <div class="acc-body"><p>Have zero physical interactions with clients; start and finish each process digitally (eID &amp; sign with QES directly in web or app). This is the process that meets truly the client expectations and unlike other solutions, Evrotrust offers the same amazing user experience to citizens from over 60 different nationalities.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">10x Cost and 15x Time Savings <span class="ar">▶</span></button>
+        <div class="acc-body"><p>Using QTSP for end-to-end customer onboarding and servicing significantly reduces operational costs and processing times. Our clients have reported: 10x cheaper to alternative processes and 15x faster with lower drop-off rates than the competition.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">Scalability and Flexibility <span class="ar">▶</span></button>
+        <div class="acc-body"><p>Digital identity verification, electronic signatures, and secure authentication methods enable swift completion of contracts, agreements, and transactions for fast growing businesses. Applicable through the whole lifecycle journey of the client.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES + INTEGRATION (interactive) -->
+<style>
+  #s-services .svc-toggle{margin-top:40px}
+  #s-services .svc-panels{margin-top:34px}
+  #s-services .svc-panel{display:none}
+  #s-services .svc-panel.show{display:block;animation:svcfade .45s cubic-bezier(.16,1,.3,1)}
+  @keyframes svcfade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  #s-services .svc-grid{display:grid;gap:20px}
+  #s-services .svc-grid-4{grid-template-columns:repeat(4,1fr)}
+  #s-services .svc-grid-3{grid-template-columns:repeat(3,1fr)}
+  #s-services .svc-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:26px 24px;display:flex;flex-direction:column;
+    transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,border-color .3s}
+  #s-services .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(245,130,31,.35)}
+  #s-services .svc-card.reco{border-color:rgba(245,130,31,.5);box-shadow:0 22px 54px -34px rgba(245,130,31,.75)}
+  #s-services .svc-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  #s-services .svc-card h3{font-size:18px}
+  #s-services .svc-tu{font-size:13px;font-weight:600;color:var(--flame);background:var(--grad-soft);
+    border:1px solid rgba(245,130,31,.25);padding:5px 12px;border-radius:100px;white-space:nowrap}
+  #s-services .svc-cat{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+  #s-services .svc-card p{color:var(--ink-soft);font-size:15px;line-height:1.55;margin:0;flex:1}
+  #s-services .svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  #s-services .svc-tags span{font-size:12px;color:var(--ink-soft);background:var(--cloud);
+    border:1px solid var(--line);padding:5px 11px;border-radius:8px}
+  #s-services .svc-note{margin-top:26px;font-size:14px;color:var(--ink-soft);line-height:1.55;max-width:760px}
+  #s-services .svc-note b{color:var(--ink);font-weight:600}
+  @media(max-width:900px){#s-services .svc-grid-4{grid-template-columns:1fr 1fr}#s-services .svc-grid-3{grid-template-columns:1fr}}
+  @media(max-width:560px){#s-services .svc-grid-4{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){#s-services .svc-panel.show{animation:none}#s-services .svc-card{transition:none}}
+</style>
+<div class="sep"><i></i></div>
+<section class="reveal tint" id="s-services">
+  <div class="wrap">
+    <div class="eyebrow">What we offer</div>
+    <h2 class="frame sec-title">The full trust stack — and how to ship it</h2>
+    <p class="lead">Four qualified services on one Trust Units wallet, delivered through the integration path that fits your architecture.</p>
+
+    <div class="svc-toggle tu-btns" id="svcToggle" role="tablist" aria-label="Services and integration">
+      <button class="tu-btn active" data-p="services" role="tab" aria-selected="true">What we offer</button>
+      <button class="tu-btn" data-p="integrate" role="tab" aria-selected="false">How to integrate</button>
+    </div>
+
+    <div class="svc-panels">
+      <!-- SERVICES -->
+      <div class="svc-panel show" data-panel="services" role="tabpanel">
+        <div class="svc-grid svc-grid-4">
+          <article class="svc-card">
+            <div class="svc-top"><h3>eID Verification</h3><span class="svc-tu mono">3 TU</span></div>
+            <p>Remote KYC/AML identity, eIDAS LoA High. 61 nationalities, verified in ~2 min.</p>
+          </article>
+          <article class="svc-card">
+            <div class="svc-top"><h3>Qualified eSignature</h3><span class="svc-tu mono">1 TU</span></div>
+            <p>Legally binding across all 27 EU member states. Issued automatically after eID.</p>
+          </article>
+          <article class="svc-card">
+            <div class="svc-top"><h3>Qualified eDelivery</h3><span class="svc-tu mono">1 TU</span></div>
+            <p>Certified document delivery. Tamper-proof audit trail, evidence kept 10 years.</p>
+          </article>
+          <article class="svc-card">
+            <div class="svc-top"><h3>2FA &amp; eTimestamp</h3><span class="svc-tu mono">0.05 / 0.02 TU</span></div>
+            <p>PSD2-SCA authentication and qualified proof of time.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- INTEGRATION -->
+      <div class="svc-panel" data-panel="integrate" role="tabpanel">
+        <div class="svc-grid svc-grid-3">
+          <article class="svc-card">
+            <div class="svc-top"><h3>API Integration</h3><span class="svc-cat">Backend</span></div>
+            <p>Full control over logic. Server-to-server with JSON responses and webhooks.</p>
+            <div class="svc-tags"><span>High control</span><span>Build own UI</span><span>Any stack</span></div>
+          </article>
+          <article class="svc-card reco">
+            <div class="svc-top"><h3>Web SDK</h3><span class="svc-tu mono">Recommended</span></div>
+            <p>Embed a ready-made Evrotrust flow in any website. Fast integration, UI included.</p>
+            <div class="svc-tags"><span>Fast setup</span><span>Ready UI</span><span>Any browser</span></div>
+          </article>
+          <article class="svc-card">
+            <div class="svc-top"><h3>Mobile SDK</h3><span class="svc-cat">Native app</span></div>
+            <p>Native iOS / Android. Best UX and highest security — private key stays in the device HSM.</p>
+            <div class="svc-tags"><span>Best UX</span><span>NFC &amp; biometrics</span><span>iOS / Android</span></div>
+          </article>
+        </div>
+        <p class="svc-note">All paths are <b>eIDAS compliant</b> and legally binding across the EU. Integration starts with an <b>API Key</b> issued after the partner agreement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="reveal testimonial" id="s-testimonial">
+  <div class="wrap">
+    <div class="quote-mark">&ldquo;</div>
+    <blockquote>Achieved 10x faster customer onboarding than our previous process.</blockquote>
+    <div class="attr"><b>UBB, a KBC Group Bank</b><span>Head of Digital Channels</span></div>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section class="reveal" id="s-models">
+  <div class="wrap">
+    <div class="eyebrow">Referral or Reseller?</div>
+    <h2 class="frame sec-title">Two ways to partner</h2>
+    <p class="lead" style="margin-top:20px">Pick the model that fits how you go to market — refer clients to our sales team, or own the client and resell prepaid Trust Units bundled into your own offering.</p>
+    <div class="grid2">
+      <div class="model ref">
+        <div class="bar"></div>
+        <div class="tag">Referral</div>
+        <h3>You refer, we contract</h3>
+        <div class="who">For licensed agents and resellers of CRM, HR or other software where Evrotrust is integrated.</div>
+        <ul>
+          <li>Business clients are referred to the Evrotrust sales team; Evrotrust contracts the client.</li>
+          <li>No volume commitment.</li>
+          <li>Commission fee for each signed contract and paid customer invoice.</li>
+          <li>No engagement with the client integration process.</li>
+          <li>No specific industry knowledge required.</li>
+        </ul>
+      </div>
+      <div class="model res">
+        <div class="bar"></div>
+        <div class="tag">Reseller</div>
+        <h3>You own the client</h3>
+        <div class="who">For providers of software platforms bundling trust services into their own product.</div>
+        <ul>
+          <li>Client ownership sits with the partner; you sign a Reseller contract with Evrotrust.</li>
+          <li>Purchase a prepaid Trust Unit package at reseller discounts.</li>
+          <li>End price is negotiated directly between you and your client.</li>
+          <li>One-time integration effort for embedded solutions.</li>
+          <li>Bundle trust services with your own business model and pricing.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><i></i></div>
+
+<!-- RESELLER MODEL -->
+<section class="reveal" id="s-reseller">
+  <div class="wrap">
+    <div class="eyebrow">Reseller model · pricing</div>
+    <h2 class="frame sec-title">The Reseller model</h2>
+    <p class="lead" style="margin-top:20px">Client ownership sits with you. Sign a Reseller contract, buy prepaid Trust Unit packages at a discount, and set your own pricing.</p>
+
+    <div class="res-grid">
+      <div class="res-benefits">
+        <ul>
+          <li>Prepaid Trust Unit packages at reseller discounts.</li>
+          <li>Suitable for software platform providers.</li>
+          <li>One-time integration for embedded solutions.</li>
+          <li>Bundle trust services with your own pricing.</li>
+          <li>End price negotiated directly with your clients.</li>
+        </ul>
+      </div>
+      <div class="rtiers">
+        <div class="rtiers-head">Reseller tiers · 12-month TU volume</div>
+        <div class="rtier rt1">
+          <span class="rt-name"><span class="rt-dot"></span>Starter</span>
+          <span class="rt-off">5%<small> off</small></span>
+        </div>
+        <div class="rtier rt2">
+          <span class="rt-name"><span class="rt-dot"></span>Silver <span class="rt-vol">· 36,000 TU</span></span>
+          <span class="rt-off">7%<small> off</small></span>
+        </div>
+        <div class="rtier rt3">
+          <span class="rt-name"><span class="rt-dot"></span>Gold <span class="rt-vol">· 72,000 TU</span></span>
+          <span class="rt-off">10%<small> off</small></span>
+        </div>
+        <div class="rtier hot">
+          <span class="rt-name"><span class="rt-dot"></span>Platinum <span class="rt-vol">· 240,000 TU</span></span>
+          <span class="rt-off">15%<small> off</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><i></i></div>
+
+<!-- REFERRAL ECONOMICS -->
+<section class="tint reveal" id="s-referral">
+  <div class="wrap">
+    <div class="eyebrow">Referral model · earnings</div>
+    <h2 class="frame sec-title">Earn up to 15% on first-year fees</h2>
+    <p class="lead" style="margin-top:20px">Commission is based only on revenue from trust services — support, professional/training and third-party services are excluded. Paid 30 days after the client pays their invoice.</p>
+
+    <div class="tiers">
+      <div class="tier t1">
+        <div class="lvl">L1 · Qualified Lead</div>
+        <h4>Convert a prospect into a qualified lead</h4>
+        <p>Explicit interest in Evrotrust, an identified use-case and potential deal size.</p>
+        <div class="pct">5%<small> of invoiced revenue</small></div>
+      </div>
+      <div class="tier t2">
+        <div class="lvl">L2 · Drive &amp; Sign</div>
+        <h4>Run the whole sales process to signature</h4>
+        <p>L1 plus demos, local-language materials, sales meetings and negotiations to contract.</p>
+        <div class="pct">15%<small> of invoiced revenue</small></div>
+      </div>
+      <div class="tier t3">
+        <div class="lvl">L3 · Upsell bonus (renewals)</div>
+        <h4>A steady stream on year 2 &amp; 3</h4>
+        <div class="split">
+          <div><span>7%</span><small>Year 2 · onboarded clients</small></div>
+          <div><span>5%</span><small>Year 3 · same clients</small></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">L3 requires active partner status — continuously generating at least €5,000/year from new business. Bonus is calculated on the paid contractual value of each client. Applies to L2 partners; L1 referral partners receive 5%. All figures exclude VAT.</p>
+
+    <h3 style="margin-top:64px;font-size:24px">How a referral works</h3>
+    <div class="steps">
+      <div class="step"><div class="num"></div><div><h4>Refer a customer</h4><p>Our sales team follows up. When the customer signs, you earn a percentage of their revenue.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Accepted or rejected</h4><p>An accepted referral converts into an opportunity. A referral is rejected only if it is already an Evrotrust opportunity, or not a qualified lead.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Make the case</h4><p>Identify the need and decision-makers, and get a sense of budget.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Close within six months</h4><p>The deal must be closed-won within six months of the referral submission.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Stay active</h4><p>Referral fees aren't available to partners acting as resellers. Active status is based on new-business revenue from the previous year.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><i></i></div>
+
+<!-- TRUST UNITS -->
+<section class="reveal" id="s-tu">
+  <div class="wrap">
+    <div class="eyebrow">The currency</div>
+    <h2 class="frame sec-title">Everything runs on Trust Units</h2>
+    <p class="lead" style="margin-top:20px">One standardized unit measures all platform usage. Fill your Evrotrust Wallet with Trust Units and spend them across any service — current or new — any way you want.</p>
+
+    <div class="tu-wrap">
+      <div>
+        <p style="font-weight:600;margin-bottom:16px">Tap a service to see what it costs:</p>
+        <div class="tu-btns" id="tuBtns">
+          <button class="tu-btn active" data-v="1" data-d="Qualified e-signature of a document. Covers a standard transaction value up to €20,000." data-h="Most common">QES of a document</button>
+          <button class="tu-btn" data-v="0.7" data-d="Qualified e-signature over a hash of a document." data-h="Hash signing">QES over a hash</button>
+          <button class="tu-btn" data-v="0.7" data-d="Advanced e-signature over a document." data-h="AES">Advanced e-signature</button>
+          <button class="tu-btn" data-v="3" data-d="Remote eID verification — done only once per person. No need to re-identify for each signature." data-h="One-time per person">eID verification</button>
+          <button class="tu-btn" data-v="1" data-d="Qualified e-delivery with the same legal value as registered mail." data-h="Registered-mail value">Qualified e-delivery</button>
+          <button class="tu-btn" data-v="0.05" data-d="Two-factor authentication based on combined biometry." data-h="Strong auth">2FA</button>
+          <button class="tu-btn" data-v="0.02" data-d="Qualified timestamp — proof of time for documents and logs." data-h="Proof of time">Qualified timestamp</button>
+        </div>
+      </div>
+      <div class="tu-readout">
+        <div class="val" id="tuVal">1<small> TU</small></div>
+        <div class="desc" id="tuDesc">Qualified e-signature of a document. Covers a standard transaction value up to €20,000.</div>
+        <div class="hint" id="tuHint">Most common</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="node">eSign<small>1 TU</small></div>
+      <div class="node">eID<small>3 TU</small></div>
+      <div class="node">eDelivery<small>1 TU</small></div>
+      <div class="node">All new products<small>mapped to TU</small></div>
+      <span class="arr">→</span>
+      <div class="node">Trust Unit Package</div>
+      <span class="arr">→</span>
+      <div class="node">Referral / Reseller</div>
+      <span class="arr">→</span>
+      <div class="node">Business Clients</div>
+    </div>
+
+    <div class="grid2" style="margin-top:40px">
+      <div class="model res"><div class="bar" style="background:linear-gradient(120deg,#16a085,#1abc9c)"></div>
+        <div class="tag">Pay-as-you-go</div><h3>No one-off costs</h3>
+        <div class="who" style="margin-bottom:0">Start with zero commitment. Embedded discounts kick in automatically as your volume grows.</div>
+      </div>
+      <div class="model ref"><div class="bar"></div>
+        <div class="tag">Committed volume</div><h3>Lower cost, bigger discount</h3>
+        <div class="who" style="margin-bottom:0">Commit to usage levels for lower prices — the larger the commitment, the greater the discount. Spend across multiple channels and services.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><i></i></div>
+
+<!-- WHY -->
+<section class="tint reveal" id="s-why">
+  <div class="wrap">
+    <div class="eyebrow">Why Evrotrust</div>
+    <h2 class="frame sec-title">A notified eID scheme <em style="font-style:normal;color:var(--flame)">and</em> a QTSP</h2>
+    <p class="lead" style="margin-top:20px">The most AML-compliant remote KYC solution, plus the full set of eIDAS qualified trust services — from one platform, fully white-labellable.</p>
+
+    <div class="reasons">
+      <div class="reason"><h4>Standardization &amp; interoperability</h4><p>Our eID is automatically accepted by all EU member states (reg. 910 eIDAS).</p></div>
+      <div class="reason"><h4>Compliance with regulation</h4><p>Automatically AML-compliant for KYC in all member states (5th AML Directive).</p></div>
+      <div class="reason"><h4>Trust &amp; risk management</h4><p>Identification via an eID scheme isn't third-party reliance — by law, we bear the risk of wrongful identification.</p></div>
+      <div class="reason"><h4>True end-to-end digital journey</h4><p>Zero physical interactions — eID and sign with QES directly in web or app, white-labeled as your own.</p></div>
+      <div class="reason"><h4>Cost &amp; time savings</h4><p>End-to-end onboarding and servicing significantly cuts operational cost and processing time.</p></div>
+      <div class="reason"><h4>Future-proofing</h4><p>A notified scheme is the foundation for future regulation and the upcoming EU ID Wallet.</p></div>
+    </div>
+
+    <div class="counters">
+      <div><b data-to="250" data-suffix="+">0</b><small>clients</small></div>
+      <div><b data-to="15" data-suffix="+">0</b><small>major EU banks</small></div>
+      <div><b data-to="11">0</b><small>countries</small></div>
+      <div><b data-to="2.5" data-suffix="M+" data-dec="1">0</b><small>users</small></div>
+      <div><b data-to="61">0</b><small>nationalities</small></div>
+    </div>
+
+    <div class="trust-row">
+      <span>UniCredit</span><span>KBC</span><span>Raiffeisen</span><span>UBB</span><span>Allianz</span>
+      <span>DocuSign</span><span>Adobe</span><span>Deloitte</span><span>Accenture</span><span>Software Group</span>
+      <span>Porsche Finance</span><span>Paysafe</span><span>A1</span><span>Bulgarian Government</span>
+    </div>
+
+    <div class="mc">
+      <h3>And Mastercard trusts us</h3>
+      <div>Selected by Mastercard Global as an eID &amp; Trust Service Partner for CEE.</div>
+      <div>Audited on IT, data protection, security, compliance and TPRM.</div>
+      <div>Licensed to use the Mastercard ID brand, with a white-label SDK.</div>
+      <div>Government pilot in North Macedonia.</div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><i></i></div>
+
+<!-- USE CASES (stacked) -->
+<section class="reveal" id="s-usecases">
+  <div class="wrap">
+    <div class="eyebrow">Example use-cases</div>
+    <h2 class="frame sec-title">Where partners put us to work</h2>
+
+    <div class="uc-block">
+      <div class="uc-head">Banking · Onboarding</div>
+      <div class="panel-cols">
+        <div class="uc-col"><h4>Online</h4><ul>
+          <li>Remote identification for KYC/AML, compliant with EU 5AMLD.</li>
+          <li>Client declarations for AML &amp; KYC signed with remote cloud-based QES.</li>
+          <li>Remote account opening with automatic population of client data.</li>
+          <li>Remote signing of loan agreements with QES via SMS or the bank's app.</li>
+        </ul></div>
+        <div class="uc-col"><h4>In the retail network</h4><ul>
+          <li>Fully compliant onboarding and sales with one-time QES via SMS — no smartphone required.</li>
+          <li>Paperless engagement and servicing across all processes.</li>
+          <li>On-the-field onboarding through partners, agents and subcontractors.</li>
+          <li>Digitalize management of the retail and agents network.</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="uc-block">
+      <div class="uc-head">Banking · Servicing</div>
+      <div class="panel-cols">
+        <div class="uc-col"><h4>Customer facing</h4><ul>
+          <li>Transform OTP SMS codes into QES inside internet banking.</li>
+          <li>Remote card issuance with QES and secure qualified delivery of the PIN.</li>
+          <li>Secure digital delivery of payment-delay notifications.</li>
+        </ul></div>
+        <div class="uc-col"><h4>Internal</h4><ul>
+          <li>Remote AML-compliant identification for data cleaning and updates.</li>
+          <li>Automated signing on behalf of the bank with cloud-based QES.</li>
+          <li>Out-of-court settlement for bad-debt collection with QES and qualified delivery.</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="uc-block">
+      <div class="uc-head">Insurance</div>
+      <div class="panel-cols">
+        <div class="uc-col"><h4>Customer facing</h4><ul>
+          <li>Remote onboarding with automated client generation in the CRM.</li>
+          <li>Remote signing of insurance agreements via SMS one-time QES or the insurer's app.</li>
+          <li>Digitalize claims filing &amp; submission with QES and qualified delivery.</li>
+          <li>Retention &amp; upsell — send and sign contracts and T&amp;Cs within minutes of a service call.</li>
+        </ul></div>
+        <div class="uc-col"><h4>Internal</h4><ul>
+          <li>Optimize internal validation, escalation and approval of claims and payment orders.</li>
+          <li>Automated issuance of policies on behalf of the insurer with cloud-based QES.</li>
+          <li>Secure digital delivery of claim-repair orders to partnering shops.</li>
+          <li>Digitalize management of the retail and agents network.</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="uc-block">
+      <div class="uc-head">Telecoms &amp; ISPs</div>
+      <div class="panel-cols">
+        <div class="uc-col"><h4>Customer facing</h4><ul>
+          <li>End-to-end remote onboarding — download the app, register, get an e-SIM.</li>
+          <li>Remote onboarding of business clients with validated company data.</li>
+          <li>Retention &amp; upsell with contracts and T&amp;Cs signed in minutes.</li>
+          <li>Offer partner services GDPR-compliant, without the client leaving the telco app.</li>
+        </ul></div>
+        <div class="uc-col"><h4>Internal</h4><ul>
+          <li>Monetize your data — remove data-sharing risk with remote QES-signed T&amp;Cs.</li>
+          <li>Digitalize PoS and cut courier costs on remote contract signing.</li>
+          <li>Digitalize management of the retail and agents network.</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="uc-block">
+      <div class="uc-head">Any industry</div>
+      <div class="panel-cols">
+        <div class="uc-col"><h4>Documents &amp; delivery</h4><ul>
+          <li>Digitalize asset management — eSign acceptance and return protocols.</li>
+          <li>Procurement with QES, qualified timestamps and secure delivery.</li>
+          <li>Qualified e-delivery with the same legal value as registered mail.</li>
+          <li>Receipts for every exchange — manage evidence for future proof.</li>
+        </ul></div>
+        <div class="uc-col"><h4>HR &amp; corporate</h4><ul>
+          <li>All HR processes — identification, onboarding, contracts, leaves, assets, termination.</li>
+          <li>Sign internal documents (BoD and shareholder decisions).</li>
+          <li>Protect content with a qualified seal and timestamp.</li>
+          <li>Timestamp significant changes and security logs for software platforms.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep"><i></i></div>
+
+<!-- CTA -->
+<section class="cta reveal" id="s-cta">
+  <div class="wrap">
+    <h2>Let's get started</h2>
+    <p>Get in touch and we'll share the program details, help you pick the model that fits your strategy, and set up the NDA and Partner Agreement.</p>
+    <div class="contacts">partners@evrotrust.com <span>·</span> preslav.slavov@evrotrust.com</div>
+  </div>
+</section>
+
+<footer>© Evrotrust, 2026. All rights reserved.</footer>
+
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* progress bar */
+  var pb = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    pb.style.width = (pct*100)+'%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* scroll-linked separator fill (fills going down, empties going up) */
+  var seps = Array.prototype.slice.call(document.querySelectorAll('.sep i'));
+  function updateSeps(){
+    var vh = window.innerHeight, start = vh*0.95, end = vh*0.42;
+    seps.forEach(function(el){
+      var r = el.parentNode.getBoundingClientRect();
+      var p = (start - r.top)/(start-end);
+      p = Math.max(0, Math.min(1, p));
+      el.style.width = (p*100).toFixed(1)+'%';
+      el.classList.toggle('on', p>0.015 && p<0.985);
+    });
+  }
+  if(rm){ seps.forEach(function(el){ el.style.width='100%'; }); }
+  else { document.addEventListener('scroll', updateSeps, {passive:true});
+         window.addEventListener('resize', updateSeps); updateSeps(); }
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ if(rm){el.classList.add('in');} else {io.observe(el);} });
+
+  /* side dot nav */
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section[id], header[id]'));
+  var labels = {'s-hero':'Intro','s-offer':'Offer','s-truth':'Truth','s-outcomes':'Outcomes','s-why-choose':'Why choose','s-services':'Services','s-testimonial':'Clients','s-models':'Models','s-reseller':'Reseller','s-referral':'Earnings','s-tu':'Trust Units','s-why':'Why us','s-usecases':'Use-cases','s-cta':'Contact'};
+  var dotsWrap = document.getElementById('dots');
+  var dotBtns = sections.map(function(sec){
+    var b=document.createElement('button');
+    b.setAttribute('aria-label', labels[sec.id]||sec.id);
+    var s=document.createElement('span'); s.textContent=labels[sec.id]||sec.id; b.appendChild(s);
+    b.addEventListener('click', function(){ sec.scrollIntoView({behavior: rm?'auto':'smooth', block:'start'}); });
+    dotsWrap.appendChild(b); return b;
+  });
+  var current = 0;
+  var sio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var i = sections.indexOf(e.target);
+        if(i>-1){ current=i; dotBtns.forEach(function(d,k){ d.classList.toggle('on', k===i); }); }
+      }
+    });
+  },{threshold:0.5});
+  sections.forEach(function(s){ sio.observe(s); });
+
+  /* keyboard navigation between sections */
+  document.addEventListener('keydown', function(e){
+    var tag=(e.target.tagName||'').toLowerCase();
+    if(tag==='input'||tag==='textarea') return;
+    var go=null;
+    if(e.key==='ArrowDown'||e.key==='PageDown'){ go=Math.min(current+1, sections.length-1); }
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){ go=Math.max(current-1, 0); }
+    else if(e.key==='Home'){ go=0; }
+    else if(e.key==='End'){ go=sections.length-1; }
+    if(go!==null){ e.preventDefault(); current=go; sections[go].scrollIntoView({behavior: rm?'auto':'smooth', block:'start'}); }
+  });
+
+  /* TU explorer */
+  var val=document.getElementById('tuVal'), desc=document.getElementById('tuDesc'), hint=document.getElementById('tuHint');
+  document.getElementById('tuBtns').addEventListener('click',function(e){
+    var b=e.target.closest('.tu-btn'); if(!b) return;
+    this.querySelectorAll('.tu-btn').forEach(function(x){x.classList.remove('active');});
+    b.classList.add('active');
+    val.innerHTML=b.dataset.v+'<small> TU</small>';
+    desc.textContent=b.dataset.d;
+    hint.textContent=b.dataset.h;
+  });
+
+  /* animated counters */
+  function animate(el){
+    var to=parseFloat(el.dataset.to), dec=parseInt(el.dataset.dec||'0'), suf=el.dataset.suffix||'', dur=1400, s=performance.now();
+    function step(now){
+      var p=Math.min((now-s)/dur,1); var eased=1-Math.pow(1-p,3);
+      el.textContent=(to*eased).toFixed(dec)+suf;
+      if(p<1) requestAnimationFrame(step); else el.textContent=to.toFixed(dec)+suf;
+    }
+    if(rm){el.textContent=to.toFixed(dec)+suf;} else requestAnimationFrame(step);
+  }
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ animate(e.target); cio.unobserve(e.target);} });
+  },{threshold:0.5});
+  document.querySelectorAll('.counters b').forEach(function(el){cio.observe(el);});
+
+  /* accordion (why choose) */
+  document.querySelectorAll('.acc-head').forEach(function(h){
+    h.addEventListener('click', function(){ h.parentNode.classList.toggle('open'); });
+  });
+
+  /* services / integration toggle */
+  var svcT=document.getElementById('svcToggle');
+  if(svcT){
+    svcT.addEventListener('click', function(e){
+      var b=e.target.closest('.tu-btn'); if(!b) return;
+      this.querySelectorAll('.tu-btn').forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+      b.classList.add('active'); b.setAttribute('aria-selected','true');
+      var p=b.dataset.p;
+      document.querySelectorAll('#s-services .svc-panel').forEach(function(pan){ pan.classList.toggle('show', pan.dataset.panel===p); });
+    });
+  }
+
+  /* interactive offer */
+  (function(){
+    var SDK=5000, MAINT_PCT=0.20, API_FEE=250, TUS=500, TU_STD=1.80, TU_PART=1.40;
+    var mode='sdk', tab='y1';
+    var rowsEl=document.getElementById('ofRows'), totEl=document.getElementById('ofTot'), labEl=document.getElementById('ofLab'),
+        subEl=document.getElementById('ofSub'), saveEl=document.getElementById('ofSave'), factsEl=document.getElementById('ofFacts');
+    var tuPart=TUS*TU_PART, tuStd=TUS*TU_STD, sdkMaint=SDK*MAINT_PCT, saving=tuStd-tuPart;
+    function eur(n){ return '€'+n.toLocaleString('en-US',{maximumFractionDigits:0}); }
+    function row(t,d,a,cls){ return '<div class="of-row"><b>'+t+'</b><span class="amt '+(cls||'')+'">'+a+'</span><small>'+d+'</small></div>'; }
+    function tuRow(n){ return row('500 Trust Units <span class="of-tag">'+(n>1?'Same price':'Partner price')+'</span>','500 QES via OTP × €1.40. Standard price €1.80 per TU. Price for this volume.','<s>'+eur(tuStd)+'</s>'+eur(tuPart)); }
+    function yearTotal(n){ return mode==='sdk' ? (n===1 ? SDK : sdkMaint)+tuPart : API_FEE+tuPart; }
+    function yearRows(n){
+      var h='';
+      if(mode==='sdk'){
+        if(n===1){
+          h+=row('Web SDK integration','One-time. Drop-in Evrotrust flow (JS), UI included.',eur(SDK));
+          h+=tuRow(n);
+          h+=row('Web SDK maintenance','20% per year, starting from year 2. Not charged in year 1.','€0');
+        } else {
+          h+=row('Web SDK maintenance','20% of the €5,000 SDK fee, per year.',eur(sdkMaint));
+          h+=tuRow(n);
+        }
+      } else {
+        if(n===1) h+=row('API integration','Users are redirected to the Evrotrust app to identify and sign. Free of charge for the period.','Free','free');
+        h+=row('API annual fee','€250 per year, charged from year 1.',eur(API_FEE));
+        h+=tuRow(n);
+      }
+      return h;
+    }
+    function render(){
+      var h='', total=0, lab='', sub='', label=(mode==='sdk'?'Web SDK':'API');
+      if(tab==='all'){
+        for(var n=1;n<=3;n++){
+          var d = mode==='sdk' ? (n===1?'Web SDK integration + 500 TU':'Web SDK maintenance (20%) + 500 TU') : 'API annual fee + 500 TU';
+          h+=row('Year '+n,d,eur(yearTotal(n)));
+        }
+        total=yearTotal(1)+yearTotal(2)+yearTotal(3); lab='Total, 3 years'; sub=label+' + 3 × 500 Trust Units';
+        saveEl.innerHTML='Partner price <b>€1.40</b> instead of the standard <b>€1.80</b>: you save <b>'+eur(saving*3)+'</b> over 3 years.';
+      } else {
+        var n=tab==='y1'?1:tab==='y2'?2:3;
+        h=yearRows(n); total=yearTotal(n); lab='Total, year '+n; sub=label+' + 500 Trust Units';
+        saveEl.innerHTML='Partner price <b>€1.40</b> per QES instead of the standard <b>€1.80</b>: you save <b>'+eur(saving)+'</b> on this 500 TU package.';
+      }
+      rowsEl.innerHTML=h; labEl.textContent=lab; subEl.textContent=sub;
+      factsEl.innerHTML = mode==='sdk'
+        ? '<li>Web SDK maintenance: 20% of the SDK fee per year, from year 2</li><li>500 TU package at €1.40 per QES in every year</li><li>Qualified certificates for end-users: free</li>'
+        : '<li>API integration is free of charge</li><li>Only an annual fee of €250, from year 1</li><li>500 TU package at €1.40 per QES in every year</li><li>Qualified certificates for end-users: free</li>';
+      animateTo(total);
+    }
+    var cur=5700, raf;
+    function animateTo(to){
+      cancelAnimationFrame(raf);
+      var from=cur, t0=performance.now(), dur=rm?0:450;
+      function step(now){
+        var p=dur? Math.min((now-t0)/dur,1):1, e=1-Math.pow(1-p,3);
+        cur=from+(to-from)*e; totEl.textContent=eur(Math.round(cur));
+        if(p<1) raf=requestAnimationFrame(step); else { cur=to; totEl.textContent=eur(to); }
+      }
+      raf=requestAnimationFrame(step);
+    }
+    function bind(id,fn){
+      document.getElementById(id).addEventListener('click',function(e){
+        var b=e.target.closest('.tu-btn'); if(!b) return;
+        this.querySelectorAll('.tu-btn').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
+        b.classList.add('active'); b.setAttribute('aria-selected','true'); fn(b.dataset.v); render();
+      });
+    }
+    bind('ofMode',function(v){mode=v;}); bind('ofTabs',function(v){tab=v;});
+    render();
+  })();
+})();
+</script>
+</body>
+</html>
